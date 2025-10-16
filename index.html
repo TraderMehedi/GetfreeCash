@@ -1,21 +1,41 @@
 <!-- 
     This is now a standard HTML5 content snippet optimized for embedding. 
     It includes all necessary CSS (inline and Tailwind CDN) and JavaScript within this single block.
-    
-    FIX: Removed XML-specific CDATA blocks and self-closing slashes from <img> tags for standard HTML5 compliance.
 -->
+
+<head>
+    <!-- 1. EXPLICITLY EMBED THE GOOGLE FONT: ROBOTO -->
+    <!-- Roboto is globally supported and highly optimized for web readability. -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 
 <!-- Load Tailwind CSS via CDN -->
 <script src="https://cdn.tailwindcss.com"></script>
 
-<!-- Configure Tailwind to use Inter font and custom colors -->
+<!-- Configure Tailwind to use Roboto font with global fallbacks including Noto Sans -->
 <script>
-    // EDIT HERE: Customize Tailwind colors and font family.
+    // The font stack is now led by 'Roboto' and includes robust fallbacks for global support.
     tailwind.config = {
         theme: {
             extend: {
                 fontFamily: {
-                    sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'],
+                    sans: [
+                        'Roboto', // New primary Google Font
+                        'ui-sans-serif', 
+                        'system-ui', 
+                        '-apple-system', 
+                        'BlinkMacSystemFont', 
+                        'Segoe UI', 
+                        'Helvetica Neue', 
+                        'Arial', 
+                        'Noto Sans', // Critical global character support (CJK, Cyrillic, etc.)
+                        'sans-serif', 
+                        'Apple Color Emoji', 
+                        'Segoe UI Emoji', 
+                        'Segoe UI Symbol', 
+                        'Noto Color Emoji'
+                    ],
                 },
                 colors: {
                     // Predefined colors used for buttons
@@ -84,7 +104,7 @@
             <!-- EDIT HERE: Modify this card block (Image, Title, Description, Link, Button Color) -->
             <div class="offer-card rounded-xl shadow-2xl overflow-hidden card-transition">
                 <!-- EDIT IMAGE: Change the 'src' URL to your own image or adjust the placeholder parameters -->
-                <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fachev.ca%2Fevent%2Ffinding-your-path-to-cpa-designation-webinar-april-30-24%2F&psig=AOvVaw1JyzhVQjPHdbjFjXxd5V7g&ust=1760706431650000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIDst93kqJADFQAAAAAdAAAAABAJ"
+                <img src="https://placehold.co/600x350/0E7490/ffffff?text=FashionFusion+20%25+Off"
                      onerror="this.onerror=null;this.src='https://placehold.co/600x350/9CA3AF/ffffff?text=Image+Missing'"
                      alt="FashionFusion Summer Sale" class="w-full h-40 object-cover">
                 <div class="p-5 flex flex-col items-center">
@@ -343,6 +363,3 @@
         }
     };
 </script>
-
-
-
