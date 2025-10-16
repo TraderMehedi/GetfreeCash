@@ -1,78 +1,79 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exclusive Offers - 10 Deals</title>
+<!-- 
+    This is now a standard HTML5 content snippet optimized for embedding. 
+    It includes all necessary CSS (inline and Tailwind CDN) and JavaScript within this single block.
     
-    <!-- FONT UPDATE: Explicitly load Inter from Google Fonts for global reliability -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    
-    <!-- Load Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Configure Tailwind to use Inter font and custom colors -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        // Ensure Inter is the primary font with robust system fallbacks for global compatibility
-                        sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'],
-                    },
-                    colors: {
-                        'primary-blue': '#1D4ED8',
-                        'secondary-green': '#10B981',
-                        'dark-bg': '#1F2937', // Dark Gray background base
-                    }
+    FIX: Removed XML-specific CDATA blocks and self-closing slashes from <img> tags for standard HTML5 compliance.
+-->
+
+<!-- Load Tailwind CSS via CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Configure Tailwind to use Inter font and custom colors -->
+<script>
+    // EDIT HERE: Customize Tailwind colors and font family.
+    tailwind.config = {
+        theme: {
+            extend: {
+                fontFamily: {
+                    sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'],
+                },
+                colors: {
+                    // Predefined colors used for buttons
+                    'primary-blue': '#1D4ED8',
+                    'secondary-green': '#10B981',
+                    'light-bg': '#F3F4F6', // Light Gray background base
+                    'dark-bg': '#1F2937', // Dark Gray text color (used for contrast on light background)
                 }
             }
         }
-    </script>
-    <style>
-        /* Custom styles for background and enhanced transitions/animations */
+    }
+</script>
 
-        /* Site Background Image (Subtle dark pattern for readability) */
-        body {
-            background-color: #1F2937; /* Tailwind dark-bg */
-            background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox='0 0 42 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Page-1' fill='none' fill-rule='evenodd'%3E%3Cg id='brick-wall' fill='%232E3A4D' fill-opacity='0.4'%3E%3Cpath d='M0 0h42v44H0z'/%3E%3Cpath d='M20 20v8h-8v-8zM42 42V36L34 36V28H28v8h-6v8h8V36h8v6zM21 21L13 21V13H5v8H-3v-8h8v8h8v-8h8v8zM0 0h20v8H0zM22 13h20v8H22zM0 22h8v8H0zM22 34h8v8H22zM32 0h10v8H32z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            color: #E5E7EB; /* Light text color for contrast */
-        }
+<style>
+    /* Custom styles scoped to the .blogger-offers-container */
 
-        /* Card Animation: Scale and Shadow on Hover */
-        .card-transition {
-            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-        .card-transition:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Ensure the main container text is dark inside light card */
-        .offer-card h2, .offer-card p {
-            color: #1F2937; 
-        }
-        .offer-card {
-            background-color: #ffffff;
-        }
+    /* EDIT HERE: Change the overall background color and pattern for the section */
+    .blogger-offers-container {
+        /* Tailwind light-bg + dark text + subtle pattern */
+        background-color: #F3F4F6; /* Light Gray background */
+        /* Updated pattern SVG fill color and opacity for light background (D1D5DB is light gray-300) */
+        background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox='0 0 42 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Page-1' fill='none' fill-rule='evenodd'%3E%3Cg id='brick-wall' fill='%23D1D5DB' fill-opacity='0.8'%3E%3Cpath d='M0 0h42v44H0z'/%3E%3Cpath d='M20 20v8h-8v-8zM42 42V36L34 36V28H28v8h-6v8h8V36h8v6zM21 21L13 21V13H5v8H-3v-8h8v8h8v-8h8v8zM0 0h20v8H0zM22 13h20v8H22zM0 22h8v8H0zM22 34h8v8H22zM32 0h10v8H32z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        color: #1F2937; /* Dark text for contrast */
+        padding: 1rem; 
+    }
 
-        /* Button hover effect for better visual feedback */
-        .offer-button-link:hover .offer-button {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
+    /* Card Animation: Scale and Shadow on Hover */
+    .card-transition {
+        transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    .card-transition:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Ensure the main container text is dark inside light card */
+    .offer-card h2, .offer-card p {
+        color: #1F2937; 
+    }
+    .offer-card {
+        background-color: #ffffff;
+    }
 
-    </style>
-</head>
-<body class="font-sans min-h-screen p-4 sm:p-8">
+    /* Button hover effect for better visual feedback */
+    .offer-button-link:hover .offer-button {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
 
+</style>
+
+<!-- Main Wrapper for Content -->
+<div class="blogger-offers-container font-sans min-h-screen">
     <div class="max-w-7xl mx-auto">
-        <!-- Header Section -->
+        <!-- EDIT HERE: Update the main title and subtitle of the offer section -->
         <header class="text-center mb-12">
-            <h1 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight mb-3">10 Amazing Deals Await!</h1>
-            <p class="text-xl text-gray-400">Limited-time promotions across our partner network.</p>
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-dark-bg tracking-tight mb-3">10 Amazing Deals Await!</h1>
+            <p class="text-xl text-gray-600">Limited-time promotions across our partner network.</p>
         </header>
 
         <!-- Offers Grid Container -->
@@ -80,14 +81,20 @@
         <div id="offer-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
 
             <!-- Card 1: FashionFusion - Summer Sale -->
+            <!-- EDIT HERE: Modify this card block (Image, Title, Description, Link, Button Color) -->
             <div class="offer-card rounded-xl shadow-2xl overflow-hidden card-transition">
+                <!-- EDIT IMAGE: Change the 'src' URL to your own image or adjust the placeholder parameters -->
                 <img src="https://placehold.co/600x350/0E7490/ffffff?text=FashionFusion+20%25+Off"
                      onerror="this.onerror=null;this.src='https://placehold.co/600x350/9CA3AF/ffffff?text=Image+Missing'"
                      alt="FashionFusion Summer Sale" class="w-full h-40 object-cover">
                 <div class="p-5 flex flex-col items-center">
+                    <!-- EDIT TITLE -->
                     <h2 class="text-xl font-bold mb-1">20% Off All Items</h2>
+                    <!-- EDIT DESCRIPTION -->
                     <p class="text-gray-500 text-center mb-4 text-sm">Valid for the next 48 hours only. Use code **SAVE20**.</p>
+                    <!-- EDIT LINK (href) -->
                     <a href="https://www.fashionfusion.com/offer" target="_blank" rel="noopener noreferrer" class="w-full offer-button-link">
+                        <!-- EDIT BUTTON TEXT AND COLOR (e.g., change bg-primary-blue to bg-red-500) -->
                         <button onclick="claimOffer('Offer 1: 20% Off')"
                                 title="Offer from: FashionFusion. Click to go to site."
                                 class="offer-button w-full py-2 bg-primary-blue text-white font-semibold rounded-lg hover:bg-blue-700 transition duration-300 shadow-md">
@@ -262,79 +269,77 @@
         </div>
         
         <footer class="mt-12 text-center text-gray-500 text-sm">
+            <!-- EDIT HERE: Update the footer text -->
             <p>All offers are subject to terms and conditions of the respective retailers.</p>
         </footer>
 
         <!-- Feedback Message Area (Hidden by default) -->
+        <!-- EDIT HERE: Adjust the styling or position of the feedback box -->
         <div id="feedback-message" class="fixed bottom-4 right-4 bg-gray-100 border border-gray-300 text-gray-800 p-4 rounded-lg shadow-xl hidden transition-opacity duration-500 opacity-0 max-w-xs z-50">
             <p id="feedback-text" class="font-medium"></p>
         </div>
     </div>
+</div>
 
-    <!-- The script now uses type="module" to enable import statements -->
-    <script type="module">
-        // Simple JavaScript function to handle the button click feedback
-        // IMPORTANT: The function is attached to the window object so it can be called 
-        // from the inline 'onclick' attributes in the HTML (which are non-module scope).
-        window.claimOffer = function(offerName) {
-            const feedbackBox = document.getElementById('feedback-message');
-            const feedbackText = document.getElementById('feedback-text');
+<!-- The script block remains outside the main content wrapper for cleaner embedding -->
+<script type="module">
+    // EDIT HERE: Modify the message or timing of the offer claim pop-up notification
+    window.claimOffer = function(offerName) {
+        const feedbackBox = document.getElementById('feedback-message');
+        const feedbackText = document.getElementById('feedback-text');
 
-            // Set the message
-            feedbackText.textContent = `${offerName} claimed! Check your cart/email.`;
+        // Set the message
+        feedbackText.textContent = `${offerName} claimed! Check your cart/email.`;
 
-            // Show the message box
-            feedbackBox.classList.remove('hidden', 'opacity-0');
-            feedbackBox.classList.add('opacity-100');
+        // Show the message box
+        feedbackBox.classList.remove('hidden', 'opacity-0');
+        feedbackBox.classList.add('opacity-100');
 
-            // Hide the message box after 3 seconds
+        // Hide the message box after 3 seconds (3000ms)
+        setTimeout(() => {
+            feedbackBox.classList.remove('opacity-100');
+            feedbackBox.classList.add('opacity-0');
+            
+            // Wait for transition to finish before hiding display
             setTimeout(() => {
-                feedbackBox.classList.remove('opacity-100');
-                feedbackBox.classList.add('opacity-0');
-                
-                // Wait for transition to finish before hiding display
-                setTimeout(() => {
-                    feedbackBox.classList.add('hidden');
-                }, 500); 
-            }, 3000);
-        }
+                feedbackBox.classList.add('hidden');
+            }, 500); 
+        }, 3000);
+    }
 
-        // Initialize Firebase services
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
-        
-        let app;
-        let auth;
-        let db;
+    // Initialize Firebase services (Kept for Canvas environment stability)
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+    import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+    import { getFirestore } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+    
+    let app;
+    let auth;
+    let db;
 
-        window.onload = async () => {
-            try {
-                // Moved access to global variables inside the onload function to prevent ReferenceError
-                const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-                const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
-                const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : undefined;
+    window.onload = async () => {
+        try {
+            // Moved access to global variables inside the onload function to prevent ReferenceError
+            const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+            const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
+            const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : undefined;
 
-                if (Object.keys(firebaseConfig).length > 0) {
-                    app = initializeApp(firebaseConfig);
-                    auth = getAuth(app);
-                    db = getFirestore(app);
+            if (Object.keys(firebaseConfig).length > 0) {
+                app = initializeApp(firebaseConfig);
+                auth = getAuth(app);
+                db = getFirestore(app);
 
-                    // Sign in using the provided token or anonymously
-                    if (initialAuthToken) {
-                        await signInWithCustomToken(auth, initialAuthToken);
-                    } else {
-                        await signInAnonymously(auth);
-                    }
-                    console.log(`Firebase initialized for app ${appId} and authenticated.`);
+                // Sign in using the provided token or anonymously
+                if (initialAuthToken) {
+                    await signInWithCustomToken(auth, initialAuthToken);
                 } else {
-                    console.warn("Firebase config is empty. Proceeding without database/auth functionality.");
+                    await signInAnonymously(auth);
                 }
-            } catch (error) {
-                console.error("Error during Firebase initialization or sign-in:", error);
+                console.log(`Firebase initialized for app ${appId} and authenticated.`);
+            } else {
+                console.warn("Firebase config is empty. Proceeding without database/auth functionality.");
             }
-        };
-
-    </script>
-</body>
-</html>
+        } catch (error) {
+            console.error("Error during Firebase initialization or sign-in:", error);
+        }
+    };
+</script>
